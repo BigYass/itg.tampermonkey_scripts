@@ -50,7 +50,6 @@
 			'button[value="pick-authenticator"]',
 			'button[value="otp::0"]',
 			'button[value="default"]', 
-			
 		]
 
 		for (const query of queries) {
@@ -64,6 +63,8 @@
 	}
 
 	const loop = () => {
+		let again = true
+
 		tries += 1
 		console.log("loop, tries = " + tries)
 
@@ -76,20 +77,18 @@
 
 			if(!empty_input){
 				button.click()
+				again = false
 			} else {
 				console.log(empty_input + " empty!")
 			}
-		}else if (tries < max_try){
+		} else {
 			console.log('Button not found...')
-			setTimeout(loop, retry_interval)
 		}
-	}
 
-	const handle_no_launch = () => {
-		if (tries < 1) loop()
+		if (again && tries < max_try) setTimeout(loop, retry_interval)
 	}
 
 	// window.addEventListener('DOMContentLoaded', loop);
 
-	setTimeout(handle_no_launch, timeout)
+	loop()
 })();
