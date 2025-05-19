@@ -15,6 +15,9 @@
 
 	const retry_interval = 1000
 	const max_try = 30
+
+	const timeout = 5000;
+
 	let tries = 0
 
 	const isClickAllowed = () => {
@@ -82,5 +85,11 @@
 		}
 	}
 
-	window.addEventListener('load', loop);
+	const handle_no_launch = () => {
+		if (tries < 1) loop()
+	}
+
+	window.addEventListener('DOMContentLoaded', loop);
+
+	setTimeout(handle_no_launch, timeout)
 })();
