@@ -31,7 +31,7 @@
 			const input = document.querySelector(query) 
 			console.log('input = ' + input)
 
-			if(input && input.name && input.name === 'auth') return query // If auth, then we do not click in any case
+			if(input && input.name && input.name === 'code') return query // If auth, then we do not click in any case
 
 			if(input && !input.value.trim()){
 				console.log(query + " empty!")
