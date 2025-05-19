@@ -13,10 +13,10 @@
 	'use strict';
 	console.log("AtheraAutoLogin starting")
 
-	const retry_interval = 1000
-	const max_try = 30
+	const retry_interval = 200
+	const max_try = 120
 
-	const timeout = 5000;
+	const timeout = 0
 
 	let tries = 0
 
@@ -89,7 +89,7 @@
 		if (tries < 1) loop()
 	}
 
-	window.addEventListener('DOMContentLoaded', loop);
+	// window.addEventListener('DOMContentLoaded', loop);
 
 	setTimeout(handle_no_launch, timeout)
 })();
