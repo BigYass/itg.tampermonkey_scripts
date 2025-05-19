@@ -24,7 +24,7 @@
 		const queries = [
 			'input[name="username"]',
 			'input[name="password"]',
-			'input[name="auth"]',
+			'input[name="code"]',
 		]
 
 		for (const query of queries) {
