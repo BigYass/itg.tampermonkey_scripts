@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraAutoLogin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  try to take over the world!
 // @author       BigYass
 // @match        https://auth.atera.com/* 
@@ -86,9 +86,7 @@
 			if(!isClickAllowed(button)){
 				button.click()
 				again = false
-			} else {
-				console.log(empty_input + " empty!")
-			}
+			} 
 		} else {
 			console.log('Button not found...')
 		}
