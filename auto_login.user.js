@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraAutoLogin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  try to take over the world!
 // @author       BigYass
 // @match        https://auth.atera.com/* https://app.atera.com/newlogin/errorpage?message=error.force_logout&backto=login
