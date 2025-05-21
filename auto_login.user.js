@@ -86,9 +86,7 @@
 			if(!isClickAllowed(button)){
 				button.click()
 				again = false
-			} else {
-				console.log(empty_input + " empty!")
-			}
+			} 
 		} else {
 			console.log('Button not found...')
 		}
