@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraAutoLogin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  try to take over the world!
 // @author       BigYass
 // @match        https://auth.atera.com/* 
@@ -12,7 +12,7 @@
 
 (function() {
 	'use strict';
-	console.log("AtheraAutoLogin starting")
+	console.log("AteraAutoLogin starting")
 
 	const retry_interval = 200
 	const max_try = 120
@@ -21,6 +21,11 @@
 
 	let tries = 0
 
+	/**
+	 * 
+	 * @param {HTMLAllCollection} button The button that we want to click 
+	 * @returns {boolean} if we click the button or not given the situation of the page and what button we want to click
+	 */
 	const isClickAllowed = (button) => {
 		const queries = [
 			'input[name="username"]',
@@ -32,11 +37,11 @@
 			const input = document.querySelector(query) 
 			console.log('input = ' + input)
 
-			if(input && input.name && input.name === 'code') return query // If auth, then we do not click in any case
+			if(input && input.name && input.name === 'code') return true // If auth, then we do not click in any case
 
 			if(input && !input.value.trim()){
 				console.log(query + " empty!")
-				return query
+				return true
 			} else {
 				console.log(query + " not empty (or not found)")
 			}
@@ -45,7 +50,10 @@
 		return false
 	}
 
-
+	/**
+	 * 
+	 * @returns Find the first button that qualify as a button that we have to click
+	 */
 	const getButton = () => {
 		const queries = [
 			'button[value="pick-authenticator"]',
@@ -75,9 +83,7 @@
 		if (button) {
 			console.log(button + "found!")
 
-			const empty_input = isClickAllowed(button) 
-
-			if(!empty_input){
+			if(!isClickAllowed(button)){
 				button.click()
 				again = false
 			} else {
