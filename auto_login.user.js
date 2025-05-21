@@ -4,7 +4,7 @@
 // @version      1.0.0
 // @description  try to take over the world!
 // @author       BigYass
-// @match        https://auth.atera.com/*
+// @match        https://auth.atera.com/* https://app.atera.com/newlogin/errorpage?message=error.force_logout&backto=login
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=atera.com
 // @grant        none
 // ==/UserScript==
@@ -20,7 +20,7 @@
 
 	let tries = 0
 
-	const isClickAllowed = () => {
+	const isClickAllowed = (button) => {
 		const queries = [
 			'input[name="username"]',
 			'input[name="password"]',
@@ -49,7 +49,8 @@
 		const queries = [
 			'button[value="pick-authenticator"]',
 			'button[value="otp::0"]',
-			'button[value="default"]', 
+			'button[value="default"]',
+			'a.link[_ngcontent-ng-c1690244427=""]' // <a _ngcontent-ng-c1690244427="" class="link">Back to login</a>
 		]
 
 		for (const query of queries) {
@@ -73,7 +74,7 @@
 		if (button) {
 			console.log(button + "found!")
 
-			const empty_input = isClickAllowed() 
+			const empty_input = isClickAllowed(button) 
 
 			if(!empty_input){
 				button.click()

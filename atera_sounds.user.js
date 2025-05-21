@@ -18,7 +18,7 @@
     'door.mp3': null,
     'horn.mp3': null,
     'houston.mp3': null,
-    'siren.mp3': null,
+    'siren.mp3': 'https://opengameart.org/sites/default/files/Picked%20Coin%20Echo.wav',
   };
 
   // 2) Sauvegarde la méthode play originale
