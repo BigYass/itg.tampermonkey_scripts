@@ -15,9 +15,9 @@
   // 1) Déclare un objet de mappage : url/original → url/ton-sound
   const soundReplacements = {
     'bike.mp3': null,
-    'door.mp3': 'https://opengameart.org/sites/default/files/Picked%20Coin%20Echo.wav',
+    'door.mp3': 'none',
     'horn.mp3': null,
-    'houston.mp3': null,
+    'houston.mp3': 'https://nextcloud.itguard.lan/remote.php/dav/files/Yassine/share/Audio/ding.mp3',
     'siren.mp3': null,
   };
 
@@ -33,6 +33,8 @@
         for(const [key, value] of Object.entries(soundReplacements)) {
           if (this.src.endsWith(key)){
             if (value) {
+              if (value === 'none') return Promise.resolve()
+                
               this.src = value
               this.load()
 
