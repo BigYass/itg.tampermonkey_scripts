@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraSounds
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      1.0.1
 // @description  Change Atera Alerts Sounds to customs one
 // @author       BigYass
 // @match        https://app.atera.com/*
@@ -15,39 +15,43 @@
   // 1) Déclare un objet de mappage : url/original → url/ton-sound
   const soundReplacements = {
     'bike.mp3': null,
-    'door.mp3': null,
+    'door.mp3': 'https://opengameart.org/sites/default/files/Picked%20Coin%20Echo.wav',
     'horn.mp3': null,
     'houston.mp3': null,
-    'siren.mp3': 'https://opengameart.org/sites/default/files/Picked%20Coin%20Echo.wav',
+    'siren.mp3': null,
   };
 
-  // 2) Sauvegarde la méthode play originale
-  const _origPlay = HTMLAudioElement.prototype.play;
+  const old_play = HTMLAudioElement.prototype.play
 
-  // 3) Remplace play() pour réécrire this.src si on a une correspondance
   HTMLAudioElement.prototype.play = function(...args) {
-    const sound = this.src.split('/')[-1]
+    console.log('▶️ Interception d’un .play()');
+    try {
+      if (this.src){
+        console.log('src = ', this.src)
 
-    if (this.src && soundReplacements[sound]) {
-      console.log(`Remplacement son : ${this.src} → ${soundReplacements[sou8nd]}`);
-      this.src = soundReplacements[sound];
-    }
-    return _origPlay.apply(this, args);
-  };
+        
+        for(const [key, value] of Object.entries(soundReplacements)) {
+          if (this.src.endsWith(key)){
+            if (value) {
+              this.src = value
+              this.load()
 
-  // 4) Optionnel : intercepter aussi les new Audio(src) directs
-  const _OrigAudio = window.Audio;
-  window.Audio = function(src) {
-    let audio = new _OrigAudio(src);
-    // Si on veut aussi remplacer au moment de la création
-    if (src && soundReplacements[src]) {
-      console.log(`🔧 Remplacement Audio() constructeur : ${src} → ${soundReplacements[src]}`);
-      audio.src = soundReplacements[src];
+              console.log("new src =", this.src)
+            }
+          }
+
+        }
+      } 
+    } catch (error) {
+      console.log('erreur : ', error)
     }
-    return audio;
-  };
-  window.Audio.prototype = _OrigAudio.prototype;
+    
+    return old_play.apply(this, args);
+  }
 
   console.log('✅ Script de remplacement de sons chargé.');
+
+  
+  
 
 })();
