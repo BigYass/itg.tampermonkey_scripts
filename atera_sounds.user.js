@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraSounds
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Change Atera Alerts Sounds to customs one
 // @author       BigYass
 // @match        https://app.atera.com/*
@@ -17,7 +17,7 @@
     'bike.mp3': null,
     'door.mp3': 'none',
     'horn.mp3': null,
-    'houston.mp3': 'https://download938.mediafire.com/pgoc5h8kujegy3nwhL48bG5-s59scwTTaNagIaoa0e738plZk73bKWb3FddK5q0N_515pY4xpucff8jin2Cce2ayl86PGMXGr7ZlOZ5X_5NmcmmhGF3z1ZYOQ4TH9RjZIFWcXgbjtBk0SiDoipIhtMMpOqD_UG5tREnJJ9ZL0U9_dgXF/9crwot6j6u3xybx/ding.mp3',
+    'houston.mp3': 'https://github.com/BigYass/ressources/raw/refs/heads/main/ding.mp3',
     'siren.mp3': null,
   };
 
