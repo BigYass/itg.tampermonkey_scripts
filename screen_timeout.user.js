@@ -77,15 +77,17 @@
                 
                 const chat = host.closest('tr')
 
-                const info = chat.querySelector('h3.SessionTitle')
+                const title = chat.querySelector('h3.SessionTitle')
 
-                if (info){
-                    if (time > timeout && info.style.color != new_color){
-                        console.log(info.textContent.trim(), "turned red")
-                        info.style.color = new_color
-                    } else if (time <= timeout && info.style.color != default_color){
-                        console.log(info.textContent.trim(), "turned to default")
-                        info.style.color = default_color
+                const type = chat.querySelector()
+
+                if (title){
+                    if (time > timeout && title.style.color != new_color){
+                        console.log(title.textContent.trim(), "turned red")
+                        title.style.color = new_color
+                    } else if (time <= timeout && title.style.color != default_color){
+                        console.log(title.textContent.trim(), "turned to default")
+                        title.style.color = default_color
                     }
                 }
                 else {
@@ -106,5 +108,19 @@
         setTimeout(loop, interval)
     }
 
+    const onDomChanged = (mutationsList, observer) => {
+        check()
+    }
+
+    const observer = new MutationObserver(onDomChanged);
+
+    observer.observe(document.body, {
+        childList: true,         // Ajout/suppression d’enfants
+        subtree: true,           // Sur tout le DOM (pas juste le body direct)
+        attributes: true         // Suivre les changements d’attributs (optionnel)
+    })
+
     setTimeout(loop, interval)
+
+
 })();
