@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ScreenConnect Timeout
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Color old chat with red 
 // @author       BigYass
 // @match        https://connect.itguard.fr/*
@@ -78,8 +78,6 @@
                 const chat = host.closest('tr')
 
                 const title = chat.querySelector('h3.SessionTitle')
-
-                const type = chat.querySelector()
 
                 if (title){
                     if (time > timeout && title.style.color != new_color){
