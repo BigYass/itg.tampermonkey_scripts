@@ -78,9 +78,7 @@
                 const chat = host.closest('tr')
 
                 const title = chat.querySelector('h3.SessionTitle')
-
-                const type = chat.querySelector()
-
+                
                 if (title){
                     if (time > timeout && title.style.color != new_color){
                         console.log(title.textContent.trim(), "turned red")
