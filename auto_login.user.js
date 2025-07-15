@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraAutoLogin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.5
+// @version      1.0.6
 // @description  Au login on Atera
 // @author       BigYass
 // @match        https://auth.atera.com/* 
