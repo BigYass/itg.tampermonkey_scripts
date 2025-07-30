@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraAutoLogin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.7
+// @version      1.0.8
 // @description  Au login on Atera
 // @author       BigYass
 // @match        https://auth.atera.com/* 
@@ -28,12 +28,10 @@
 	 */
 	const isClickAllowed = (button) => {
 		const queries = [
-      'button[value="pick-authenticator"]',
-      'button[value="otp::0"]',
-      'button[value="default"]',
-      'a.link[href*="login"]',         // Plus générique pour les liens de retour à la connexion
-      'a.link:contains("Back to login")' // jQuery uniquement ; sinon utiliser une approche JS native
-    ]
+			'input[name="username"]',
+			'input[name="password"]',
+			'input[name="code"]',
+		]
 
 		for (const query of queries) {
 			const input = document.querySelector(query) 
@@ -62,7 +60,7 @@
 			'button[value="otp::0"]',
 			'button[value="default"]',
 			'a.link[_ngcontent-ng-c1690244427=""]', // <a _ngcontent-ng-c1690244427="" class="link">Back to login</a>
-      'a.link[_ngcontent-ng-c218642649]', // <a _ngcontent-ng-c218642649="" class="link">Back to login</a>
+      'a.link[_ngcontent-ng-c218642649=""]', // <a _ngcontent-ng-c218642649="" class="link">Back to login</a>
 		]
 
 		for (const query of queries) {
