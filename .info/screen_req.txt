@@ -1,0 +1,48 @@
+Request URL
+https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents
+Request Method
+POST
+Status Code
+200 OK
+Remote Address
+2.59.188.170:443
+Referrer Policy
+strict-origin-when-cross-origin
+
+HTTP/1.1 200 OK
+Date: Mon, 17 Nov 2025 12:17:11 GMT
+Server: Apache
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Content-Length: 2
+Content-Type: application/json; charset=utf-8
+Expires: -1
+X-Robots-Tag: noindex
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Origin: https://connect.itguard.fr
+Access-Control-Allow-Credentials: true
+Keep-Alive: timeout=15, max=37
+Connection: Keep-Alive
+
+POST /Services/PageService.ashx/AddSessionEvents HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Connection: keep-alive
+Content-Length: 202
+Content-Type: application/json
+Cookie: wfx_unq=W58OWKNOG9Oao6g6; settings=%7B%22selectedTabBySessionTypeMap%22%3A%7B%220%22%3A%22Start%22%2C%222%22%3A%22Messages%22%7D%2C%22collapsedPanelMap%22%3A%7B%22Inactive%22%3Afalse%7D%2C%22extendedCss%22%3A%7B%22grid-resizable-column-edges%22%3A%7B%22MainPanelNormalView%22%3A%7B%222%22%3A%22%22%7D%7D%7D%7D; .ASPXAUTH=JXmU2KnjtvaVM1e5GyMxlu5qQ++4kAmnQUtWaoz4IfJuVxHciiJ1MfEQ6WOpC+rCkH4DQEFAHZYRNExfMb4sd/9I9RVGEDvSeFqVAv8mTyYImCI+vcWdAFbNqaLdiGGgIq/SXe0Reg/2iDclDBidcSKQwLeP06Sig4z9YNYN7TAFsmskxVpnn5Rd7FeCPwm03UiOD/Sj9LXbc6XPybHjbYV6331DFNmQMNRmaP9dsxi7fHhMeVTgVS+lFM4+5DpbKw==
+Host: connect.itguard.fr
+Origin: https://connect.itguard.fr
+Referer: https://connect.itguard.fr/Host
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+X-Anti-Forgery-Token: GaTfgrYpF6JUiRwu1QM8N2PTzMpv2pbgOTKzLjNujT8BEFlhc3NpbmUgQmFtaGFvdWQB1Ks6rFnBLUI=
+X-Unauthorized-Status-Code: 403
+sec-ch-ua: "Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+
+[["Tchat Non lus"],[{"SessionID":"e2d1d946-8f15-44e3-9057-a42cf31cc674","EventType":3,"ConnectionID":"cc196fa0-65e1-4737-8ca1-aae85b9b454d","CorrelationEventID":"bbd56a5a-d2a0-4cde-b060-54542ecb2f93"}]]
