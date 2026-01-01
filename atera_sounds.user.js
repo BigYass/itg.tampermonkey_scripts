@@ -7,6 +7,8 @@
 // @match        https://app.atera.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=atera.com
 // @grant        none
+// @updateURL https://raw.githubusercontent.com/BigYass/itg.tampermonkey_scripts/main/atera_sounds.user.js
+// @downloadURL https://raw.githubusercontent.com/BigYass/itg.tampermonkey_scripts/main/atera_sounds.user.js
 // ==/UserScript==
 
 (function() {
@@ -26,12 +28,12 @@
   HTMLAudioElement.prototype.play = function(...args) {
     console.log('▶️ Interception d’un .play()');
     try {
-      if (this.src){
+      if (this.src) {
         console.log('src = ', this.src)
 
-        
-        for(const [key, value] of Object.entries(soundReplacements)) {
-          if (this.src.endsWith(key)){
+
+        for (const [key, value] of Object.entries(soundReplacements)) {
+          if (this.src.endsWith(key)) {
             if (value) {
               if (value === 'none') return Promise.resolve()
 
@@ -43,17 +45,17 @@
           }
 
         }
-      } 
+      }
     } catch (error) {
       console.log('erreur : ', error)
     }
-    
+
     return old_play.apply(this, args);
   }
 
   console.log('✅ Script de remplacement de sons chargé.');
 
-  
-  
+
+
 
 })();
