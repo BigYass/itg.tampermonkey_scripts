@@ -33,7 +33,7 @@ Content-Length: 202
 Content-Type: application/json
 Cookie: wfx_unq=W58OWKNOG9Oao6g6; settings=%7B%22selectedTabBySessionTypeMap%22%3A%7B%220%22%3A%22Start%22%2C%222%22%3A%22Messages%22%7D%2C%22collapsedPanelMap%22%3A%7B%22Inactive%22%3Afalse%7D%2C%22extendedCss%22%3A%7B%22grid-resizable-column-edges%22%3A%7B%22MainPanelNormalView%22%3A%7B%222%22%3A%22%22%7D%7D%7D%7D; .ASPXAUTH=JXmU2KnjtvaVM1e5GyMxlu5qQ++4kAmnQUtWaoz4IfJuVxHciiJ1MfEQ6WOpC+rCkH4DQEFAHZYRNExfMb4sd/9I9RVGEDvSeFqVAv8mTyYImCI+vcWdAFbNqaLdiGGgIq/SXe0Reg/2iDclDBidcSKQwLeP06Sig4z9YNYN7TAFsmskxVpnn5Rd7FeCPwm03UiOD/Sj9LXbc6XPybHjbYV6331DFNmQMNRmaP9dsxi7fHhMeVTgVS+lFM4+5DpbKw==
 Host: connect.itguard.fr
-Origin: https://connect.itguard.fr
+Origin: https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents
 Referer: https://connect.itguard.fr/Host
 Sec-Fetch-Dest: empty
 Sec-Fetch-Mode: cors
