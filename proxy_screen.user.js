@@ -19,8 +19,7 @@
   const _open = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function (method, url) {
     if (method === "POST" && rl === "https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents"){
-      console.log("Blocked !")
-      return
+      console.log("Should blocked !")
     }
 
     return _open.apply(this, arguments);
