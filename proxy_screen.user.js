@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Screen Proxy
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.1.1
 // @description  Un proxy pour ConnectWise
 // @author       BigYass
 // @match        https://connect.itguard.fr/*
@@ -14,21 +14,15 @@
 (function() {
   'use strict';
 
-  
-  /* -------- fetch -------- */
-  const _fetch = window.fetch;
-  window.fetch = function (...args) {
-    try {
-      const url = typeof args[0] === 'string' ? args[0] : args[0]?.url;
-      console.log('[fetch]', url);
-    } catch {}
-    return _fetch.apply(this, args);
-  };
 
   /* -------- XMLHttpRequest -------- */
   const _open = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function (method, url) {
-    console.log('[xhr]', method, url);
+    if (method === "POST" && rl === "https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents"){
+      console.log("Blocked !")
+      return
+    }
+
     return _open.apply(this, arguments);
   };
 
