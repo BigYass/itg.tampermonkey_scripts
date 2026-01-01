@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ScreenConnect Timeout
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Color old chat with red 
 // @author       BigYass
 // @match        https://connect.itguard.fr/*

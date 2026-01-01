@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AteraSounds
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Change Atera Alerts Sounds to customs one
 // @author       BigYass
 // @match        https://app.atera.com/*
