@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Screen Proxy
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  Un proxy pour ConnectWise
 // @author       BigYass
 // @match        https://connect.itguard.fr/*
