@@ -26,6 +26,25 @@
 
   let time = 0
 
+  const addStyle = () => {
+    const style = document.createElement("style");
+style.textContent = `
+.rainbow-text {
+  animation: colorFloat 4s linear infinite;
+  will-change: color;
+}
+
+@keyframes colorFloat {
+  0%   { color: hsl(0,   100%, 55%); }   /* rouge */
+  25%  { color: hsl(90,  100%, 55%); }   /* vert-jaune */
+  50%  { color: hsl(180, 100%, 55%); }   /* cyan */
+  75%  { color: hsl(270, 100%, 60%); }   /* violet */
+  100% { color: hsl(360, 100%, 55%); }   /* retour rouge */
+}
+`;
+document.head.appendChild(style);
+  }
+
   /**
    * Parse une durée au format "[Nh][Mm]" (ex. "2h20m", "50m", "1h") et renvoie
    * le nombre total de minutes (int).
@@ -60,11 +79,20 @@
    * Check every chat and color them if needed
    */
   const check = () => {
-    const hosts = document.querySelectorAll('div.Host.Connected')
+    const hosts = document.querySelectorAll('div.Host')
 
     hosts.forEach(host => {
       const desc = host.querySelector('p.Description')
-      if (desc) {
+      const chat = host.closest('tr')
+
+      const title = chat ? chat.querySelector('h3.SessionTitle') : null
+      
+      if (title.textContent === "ITG-LAP-YBA (Yassine)"){
+        if (!title.className.includes('rainbow-text')) {
+          title.className += " rainbow-text"
+        }
+      }
+      else if (desc) {
         const text_array = desc.textContent.split(/[-)]/)
 
         let text = ''
@@ -77,9 +105,6 @@
 
         const time = parseDuration(text)
 
-        const chat = host.closest('tr')
-
-        const title = chat.querySelector('h3.SessionTitle')
 
         if (title) {
           if (time > timeout && title.style.color != new_color) {
@@ -122,5 +147,5 @@
 
   setTimeout(loop, interval)
 
-
+  addStyle()
 })();
