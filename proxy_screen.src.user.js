@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Screen Proxy
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @description  Un proxy pour ConnectWise
 // @author       BigYass
 // @match        https://connect.itguard.fr/*
@@ -21,16 +21,16 @@
 
   let enabled = (localStorage.getItem(STORAGE_KEY) ?? "1") !== "0";
 
-  XMLHttpRequest.prototype.open = function (method, url) {
+  XMLHttpRequest.prototype.open = function(method, url) {
     this.__tm_url = url;
     this.__tm_method = method;
 
     return _open.apply(this, arguments);
   };
 
-  XMLHttpRequest.prototype.send = function (body) {
-    if (enabled && this.__tm_url === "https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents"){
-      if (body.length > 1 && /"EventType"\s*:\s*3/.test(body)){
+  XMLHttpRequest.prototype.send = function(body) {
+    if (enabled && this.__tm_url === "https://connect.itguard.fr/Services/PageService.ashx/AddSessionEvents") {
+      if (body.length > 1 && /"EventType"\s*:\s*3/.test(body)) {
         console.log(this.__tm_url + " blocked")
         this.abort()
         return
@@ -39,7 +39,7 @@
 
     return _send.apply(this, arguments);
   }
-  
+
   function setBtnStyle(btn) {
     btn.style.position = "fixed";
     btn.style.right = "12px";
@@ -96,6 +96,8 @@
       localStorage.setItem(STORAGE_KEY, enabled ? "1" : "0");
       updateBtn(btn);
     });
+
+    scheduleFade(btn);
 
     document.documentElement.appendChild(btn);
   }
