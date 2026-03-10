@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Screen Proxy
 // @namespace    http://tampermonkey.net/
-// @version      0.1.4
+// @version      0.1.5
 // @description  Un proxy pour ConnectWise
 // @author       BigYass
-// @match        https://connect.itguard.fr/*
-// @icon         https://connect.itguard.fr/FavIcon.axd
+// @match        https://*.fr/Host
+// @include      /^https://connect\.[^/]+\.fr\/Host$/
+// @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZTY2MjMyIiBkPSJNOC4yNSAyMUwzIDE1Ljc1di03LjVMOC4yNSAzaDcuNUwyMSA4LjI1djcuNUwxNS43NSAyMXptLjktNC43NUwxMiAxMy40bDIuODUgMi44NWwxLjQtMS40TDEzLjQgMTJsMi44NS0yLjg1bC0xLjQtMS40TDEyIDEwLjZMOS4xNSA3Ljc1bC0xLjQgMS40TDEwLjYgMTJsLTIuODUgMi44NXoiLz48L3N2Zz4=
 // @grant        none
 // @updateURL https://raw.githubusercontent.com/BigYass/itg.tampermonkey_scripts/main/proxy_screen.user.js
 // @downloadURL https://raw.githubusercontent.com/BigYass/itg.tampermonkey_scripts/main/proxy_screen.user.js
