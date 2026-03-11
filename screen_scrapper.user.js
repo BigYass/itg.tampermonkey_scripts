@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Screen scrapper (Active Polling)
+// @name         Screen scrapper
 // @namespace    http://tampermonkey.net/
-// @version      0.6.1
+// @version      0.6.2
 // @description  Scrap chat informations via backend polling
 // @author       You
 // @match        https://*.fr/Host
